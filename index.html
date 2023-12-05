@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const storedHash = "83aeca70c24f5119719844416e8724aad339ceb4d2819db65f33055a78797e7b";
+    let enteredHash;
+
+    do {
+        const passwordInput = prompt("Passwort Eingeben:");
+
+        // Break the loop if the user cancels the prompt
+        if (passwordInput === null) {
+            break;
+        }
+
+        // Hash the entered password using SHA-256
+        enteredHash = sha256(passwordInput);
+
+        if (enteredHash !== storedHash) {
+            // Incorrect password, ask again
+            prompt("Nö. Nochmal: ");
+        }
+
+    } while (enteredHash !== storedHash);
+
+    // Handle the case where the user cancels the prompt
+    if (enteredHash !== storedHash) {
+        // Incorrect password or prompt canceled, redirect or display an error message
+        while(true) {
+        alert("Dann halt nich")
+        }
+    } else {
+        alert("eingeloggt. Alle Bilder und Farben sind aktuell Platzhalter. Das ist die Entwicklungsseite.");
+    }
+});
+
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="index.css">
+    <title>Schülerfirma</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#"><img src="https://picsum.photos/30/30"class="d-inline-block align-top"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Startseite</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Unsere Produkte</a>
+            </li>
+            <!-- Weitere Navigationspunkte hier -->
+        </ul>
+    </div>
+</nav>
+<div class="banner">
+    <img src="https://picsum.photos/1200/400" alt="Banner Image" class="img-fluid">
+    <h1> Willkommen beim Waldschule-Hagen <br> Schülerfirma Shop</h1>
+    <div class="arrow-down">&#9660;</div>
+</div>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-12">
+            <div id="shop-status" class="alert" role="alert">
+                <!-- Shop status will be displayed here -->
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container mt-4" id="cards">
+    <div class="row">
+        <!-- Cards for most bought items go here -->
+    </div>
+    <div class="text-center mt-4">
+        <a href="#" class="btn btn-primary" onclick="alert('Hier kommt man normalerweise zu allen produkten, da wir aber noch keine haben wäre diese Seite dementsprechend leer.')">Alle Produkte</a>
+    </div>
+</div>
+<div class="footer-container">
+  <footer class="bg-light text-black footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="footer-section">
+                    <h3>Links</h3>
+             <a href="https://instagram.com/"><img src="https://www.cdnlogo.com/logos/i/21/instagram-glyph.svg" class="insta"></a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="footer-section text-center">
+                    <h3>Mitte</h3>
+                    <p>Zeugs in der mitte</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="footer-section text-right">
+                    <h3>Rechts</h3>
+                    <p>zeugs rechts</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+<script src="index.js"></script>
+</body>
+</html>
